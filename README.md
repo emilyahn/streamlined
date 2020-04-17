@@ -20,10 +20,21 @@ Our data originates from the Endangered Languages Archive ([ELAR]( http://elar.s
 
 Selected languages for this task span a wide range of language families and typological groups.
 
-Provided files per language include:
+* Sakun (iso)
+* Cicipu (iso)
+* Effutu (iso)
 
-* sph/ (script to convert .sph to .wav format: `scripts/sph_to_wav.sh`)
-* .uem file (Un-partitioned Evaluation Map--determine the regions to be analyzed in each recording; see [description](https://github.com/nryant/dscore#uem))
+#### Instructions to download from ELAR:
+
+1. Create an online account profile (free [here](https://lat1.lis.soas.ac.uk/ds/RRS_V1/RrsRegistration))
+2. Login and downlaod your cookies as a txt file (browser extensions can handle this well)
+3. Run our script to curl (download) the data: `scripts/download_elar.py` [TODO]
+
+#### Provided files per language include:
+
+* elar\_{lang}\_links.tsv (to be used by script when downloading files from ELAR)
+* .uem file (Un-partitioned Evaluation Map--determines the regions to be analyzed in each recording; see [description](https://github.com/nryant/dscore#uem))
+* ref/ (rttm files)
 
 
 ## Track 1: Speaker Diarization
@@ -39,9 +50,17 @@ Download the code from that repository and follow their installation instruction
 If you are using JDK 1.8, replace their jar file in the `LIUM/` folder with the jar found in this repository (then rename it or change its call from their `go.sh` script: `baseline/diar/lium-diarization-200129.jar` (compiled on Jan 29, 2020).
 Instructions to compile this JDK 1.8 compatible version on your own machine are [here](https://github.com/ahmetaa/lium-diarization).
 
+We provide a script to convert LIUM output into rttm format: `scripts/lium_to_rttm.py` [TODO]
+
+### 1.2 Evaluation
+
+Assuming you have your system output as .rttm files in the folder `data/{lang}/sys/`, run dscore on this folder with the `data/{lang}/ref/` folder, and output to `data/{lang}_dev.stdout`.
+
+`dscore/score.py -r data/{lang}/ref/*.rttm -s data/{lang}/sys/*.rttm > data/{lang}/{lang}_dev.stdout 2> ccp/{lang}_dev.stderr -u data/{lang}/{lang}.uem`
 
 #### Expected Results
 
+TODO: table of langs and DER
 
 ### 1.2 Similar Work
 
