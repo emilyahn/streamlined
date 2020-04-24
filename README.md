@@ -20,15 +20,15 @@ Our data originates from the Endangered Languages Archive ([ELAR]( http://elar.s
 
 Selected languages for this task span a wide range of language families and typological groups.
 
-* Sakun (iso)
-* Cicipu (iso)
-* Effutu (iso)
+* Sakun
+* Cicipu
+* Effutu
 
 #### Instructions to download from ELAR:
 
 1. Create an online account profile (free [here](https://lat1.lis.soas.ac.uk/ds/RRS_V1/RrsRegistration))
 2. Login and downlaod your cookies as a txt file (browser extensions can handle this well)
-3. Run our script to curl (download) the data: `scripts/download_elar.py` [TODO]
+3. Run our script to curl (download) the data: `scripts/download_elar.py`
 
 #### Provided files per language include:
 
@@ -50,7 +50,7 @@ Download the code from that repository and follow their installation instruction
 If you are using JDK 1.8, replace their jar file in the `LIUM/` folder with the jar found in this repository (then rename it or change its call from their `go.sh` script: `baseline/diar/lium-diarization-200129.jar` (compiled on Jan 29, 2020).
 Instructions to compile this JDK 1.8 compatible version on your own machine are [here](https://github.com/ahmetaa/lium-diarization).
 
-We provide a script to convert LIUM output into rttm format: `scripts/lium_to_rttm.py` [TODO]
+We provide a script to convert LIUM output into rttm format: `scripts/lium_to_rttm.py`
 
 ### 1.2 Evaluation
 
@@ -60,7 +60,11 @@ Assuming you have your system output as .rttm files in the folder `data/{lang}/s
 
 #### Expected Results
 
-TODO: table of langs and DER
+| Language     | DER                |
+|--------------|--------------------|
+| Cicipu       | 44.54           |
+| Effutu       | 34.65        |
+| Sakun        | 62.55      |
 
 ### 1.2 Similar Work
 

@@ -1,10 +1,12 @@
-import glob
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import os
 import sys
+import glob
 
 
 ''' convert LIUM output into rttm and write file.
-	assume {lium_dir} has folders (1 per wav file)
+	- assume {lium_dir} has folders (1 per wav file)
 	TO RUN:
 		python lium_to_rttm.py {lium_dir} {out_dir}
 '''
@@ -14,7 +16,7 @@ def lium_to_rttm(sys_txt_infile, sys_rttm_outfile, file_basename):
 
 	with open(sys_txt_infile, 'r') as f:
 		# format lium output ex: svtmg001 1 67281 310 F S U S107
-		# assuming timestamp units are in 10milliseconds
+		# timestamp units are in 10milliseconds
 		sys_lines = [line.strip().split() for line in f.readlines() if ';;' not in line]
 
 	with open(sys_rttm_outfile, 'w') as w:
