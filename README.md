@@ -27,7 +27,7 @@ Selected languages for this task span a wide range of language families and typo
 #### Instructions to download from ELAR:
 
 1. Create an online account profile (free [here](https://lat1.lis.soas.ac.uk/ds/RRS_V1/RrsRegistration))
-2. Login and downlaod your cookies as a txt file (browser extensions can handle this well)
+2. Login and downlaod your cookies as a txt file (browser extensions can handle this well). Note: If you are downloading across different days (or different sessions), you may need to re-download your cookies.
 3. Run our script to curl (download) the data: `scripts/download_elar.py`
 
 #### Provided files per language include:
@@ -47,7 +47,7 @@ This task takes raw audio as input and attempts to detect speech and cluster gro
 
 We use the lightweight system from [LIUM](https://github.com/StevenLOL/LIUM) that uses ILP clustering techniques.
 Download the code from that repository and follow their installation instructions.
-If you are using JDK 1.8, replace their jar file in the `LIUM/` folder with the jar found in this repository (then rename it or change its call from their `go.sh` script: `baseline/diar/lium-diarization-200129.jar` (compiled on Jan 29, 2020).
+If you are using JDK 1.8, replace their jar file in the `LIUM/` folder with the jar found in this repository (then rename it or change its call from their `ilp_diarization2.sh` script: `baseline/diar/lium-diarization-200129.jar` (compiled on Jan 29, 2020).
 Instructions to compile this JDK 1.8 compatible version on your own machine are [here](https://github.com/ahmetaa/lium-diarization).
 
 We provide a script to convert LIUM output into rttm format: `scripts/lium_to_rttm.py`
@@ -66,7 +66,9 @@ Assuming you have your system output as .rttm files in the folder `data/{lang}/s
 | Effutu       | 34.65        |
 | Sakun        | 62.55      |
 
-### 1.2 Similar Work
+TODO: update numbers for only DEV set
+
+### 1.3 Similar Work
 
 The DIHARD Challenge I (2018, [site](https://coml.lscp.ens.fr/dihard/2018/index.html)) and Challenge II (2019, [site](https://coml.lscp.ens.fr/dihard/), [paper](https://coml.lscp.ens.fr/dihard/2019/dh2019_is_overview.pdf)) have focused on robust speaker diarization.
 Their second challenge [baseline](https://github.com/iiscleap/DIHARD_2019_baseline_alltracks) involes the Kaldi toolkit.
